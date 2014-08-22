@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AuthToken" representedClassName="AuthToken" syncable="YES">
+        <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tokenType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Items" representedClassName="Items" syncable="YES">
+        <attribute name="itemId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="timeLog" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TimeLog" inverseName="item" inverseEntity="TimeLog" syncable="YES"/>
+    </entity>
+    <entity name="TaskType" representedClassName="TaskType" syncable="YES">
+        <attribute name="apiKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayValue" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TimeLog" representedClassName="TimeLog" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Items" inverseName="timeLog" inverseEntity="Items" syncable="YES"/>
+    </entity>
+    <entity name="TimeUnit" representedClassName="TimeUnit" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="conversion_factor" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <fetchRequest name="fetchAllItems" entity="Items"/>
+    <fetchRequest name="fetchAllTaskTypes" entity="TaskType"/>
+    <fetchRequest name="fetchItemsByTypeAndId" entity="Items" predicateString="itemId == $itemId AND itemType == $itemType"/>
+    <fetchRequest name="fetchItemTypeByTitle" entity="TaskType" predicateString="displayValue == $selectedItemTitle"/>
+    <elements>
+        <element name="AuthToken" positionX="520" positionY="171" width="128" height="75"/>
+        <element name="Items" positionX="144" positionY="162" width="128" height="105"/>
+        <element name="TaskType" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="TimeLog" positionX="-38" positionY="189" width="128" height="90"/>
+        <element name="TimeUnit" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="UserInfo" positionX="378" positionY="246" width="128" height="105"/>
+    </elements>
+</model>

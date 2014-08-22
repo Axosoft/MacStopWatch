@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'OnTime Work Log Timer' target in the 'OnTime Work Log Timer' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <CoreServices/CoreServices.h>
+    #import "DataClass.h"
+    #import "CoreDataHelper.h"
+#define GTM_OAUTH2_SKIP_GOOGLE_SUPPORT 1
+
+#endif

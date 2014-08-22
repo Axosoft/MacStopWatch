@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="797" id="798"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Axosoft Stopwatch" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="371">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="432" height="489"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1578"/>
+            <view key="contentView" id="372">
+                <rect key="frame" x="0.0" y="0.0" width="432" height="489"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView identifier="itemTableView" canDrawConcurrently="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="604">
+                        <rect key="frame" x="20" y="249" width="392" height="199"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" id="foG-eo-QpQ">
+                            <rect key="frame" x="1" y="17" width="390" height="181"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView canDrawConcurrently="YES" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" headerView="607" id="605">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="181"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <size key="intercellSpacing" width="3" height="2"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn editable="NO" width="58.8515625" minWidth="40" maxWidth="1000" id="609">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ID">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="612">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <connections>
+                                                <binding destination="739" name="value" keyPath="arrangedObjects.itemId" id="1263">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                        <string key="NSValueTransformerName">ItemIdValueTransformer</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn editable="NO" width="62.05078125" minWidth="10" maxWidth="3.4028234663852886e+38" id="841">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Type">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="842">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <connections>
+                                                <binding destination="739" name="value" keyPath="arrangedObjects.itemType" id="846">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn editable="NO" width="260.2421875" minWidth="40" maxWidth="1000" id="610">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Title">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="611">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <connections>
+                                                <binding destination="739" name="value" keyPath="arrangedObjects.title" id="748"/>
+                                            </connections>
+                                        </tableColumn>
+                                    </tableColumns>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="606">
+                            <rect key="frame" x="1" y="183" width="401" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="608">
+                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <tableHeaderView key="headerView" id="607">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="17"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </tableHeaderView>
+                        <connections>
+                            <outlet property="menu" destination="847" id="851"/>
+                        </connections>
+                    </scrollView>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="640">
+                        <rect key="frame" x="316" y="456" width="96" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="645"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Item ID" drawsBackground="YES" id="641">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="searchForId:" target="544" id="724"/>
+                        </connections>
+                    </textField>
+                    <box autoresizesSubviews="NO" title="Time Entries" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="648">
+                        <rect key="frame" x="17" y="5" width="398" height="236"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="396" height="220"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <scrollView identifier="timeLogTableView" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="620">
+                                    <rect key="frame" x="18" y="21" width="360" height="151"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <clipView key="contentView" id="zVJ-xC-AWx">
+                                        <rect key="frame" x="1" y="17" width="358" height="133"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" emptySelection="NO" autosaveColumns="NO" headerView="623" id="621">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="133"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <size key="intercellSpacing" width="3" height="2"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                <tableColumns>
+                                                    <tableColumn identifier="dateColumn" editable="NO" width="116" minWidth="40" maxWidth="1000" id="625">
+                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Date">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </tableHeaderCell>
+                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="628">
+                                                            <dateFormatter key="formatter" dateStyle="short" id="878"/>
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                        <connections>
+                                                            <binding destination="829" name="value" keyPath="arrangedObjects.date" id="833">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </tableColumn>
+                                                    <tableColumn identifier="timeColumn" width="236" minWidth="40" maxWidth="1000" id="626">
+                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Time">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </tableHeaderCell>
+                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="627">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                        <connections>
+                                                            <binding destination="829" name="value" keyPath="arrangedObjects.time" id="904">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">TimeValueTransformer</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </tableColumn>
+                                                </tableColumns>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="622">
+                                        <rect key="frame" x="1" y="184" width="153" height="15"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="624">
+                                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <tableHeaderView key="headerView" id="623">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="17"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </tableHeaderView>
+                                    <connections>
+                                        <outlet property="menu" destination="905" id="910"/>
+                                    </connections>
+                                </scrollView>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="764">
+                                    <rect key="frame" x="12" y="182" width="57" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="770"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="765">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="startTimer:" target="544" id="793"/>
+                                        <binding destination="739" name="enabled" keyPath="selectedObjects.@count" id="1142"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="771">
+                                    <rect key="frame" x="69" y="182" width="57" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="784"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="772">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="stopTimer:" target="544" id="794"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="775">
+                                    <rect key="frame" x="302" y="182" width="82" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="787"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="push" title="Upload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="776">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                        <connections>
+                                            <binding destination="829" name="enabled" keyPath="selection.@count" id="975"/>
+                                        </connections>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="uploadTime:" target="544" id="795"/>
+                                        <binding destination="829" name="enabled" keyPath="selectedObjects.@count" id="1145"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="785">
+                                    <rect key="frame" x="139" y="192" width="163" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="159" id="791"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="00:00:00" id="786">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="620" secondAttribute="trailing" constant="16" id="697"/>
+                            <constraint firstAttribute="bottom" secondItem="620" secondAttribute="bottom" constant="18" id="698"/>
+                            <constraint firstItem="620" firstAttribute="leading" secondItem="648" secondAttribute="leading" constant="16" id="699"/>
+                            <constraint firstItem="620" firstAttribute="top" secondItem="648" secondAttribute="top" constant="63" id="703"/>
+                            <constraint firstItem="764" firstAttribute="top" secondItem="648" secondAttribute="top" constant="25" id="768"/>
+                            <constraint firstItem="764" firstAttribute="leading" secondItem="648" secondAttribute="leading" constant="16" id="769"/>
+                            <constraint firstItem="775" firstAttribute="top" secondItem="648" secondAttribute="top" constant="25" id="779"/>
+                            <constraint firstAttribute="trailing" secondItem="775" secondAttribute="trailing" constant="16" id="780"/>
+                            <constraint firstItem="771" firstAttribute="top" secondItem="648" secondAttribute="top" constant="25" id="781"/>
+                            <constraint firstItem="771" firstAttribute="leading" secondItem="764" secondAttribute="trailing" constant="12" symbolic="YES" id="782"/>
+                            <constraint firstItem="785" firstAttribute="baseline" secondItem="771" secondAttribute="baseline" id="788"/>
+                            <constraint firstItem="775" firstAttribute="leading" secondItem="785" secondAttribute="trailing" constant="8" symbolic="YES" id="790"/>
+                        </constraints>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="725">
+                        <rect key="frame" x="212" y="454" width="99" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="731"/>
+                        </constraints>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="726">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="727"/>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="1207" name="content" keyPath="arrangedObjects.displayValue" id="1233"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="604" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="616"/>
+                    <constraint firstAttribute="trailing" secondItem="604" secondAttribute="trailing" constant="20" symbolic="YES" id="637"/>
+                    <constraint firstAttribute="trailing" secondItem="640" secondAttribute="trailing" constant="20" symbolic="YES" id="643"/>
+                    <constraint firstItem="604" firstAttribute="top" secondItem="640" secondAttribute="bottom" constant="8" symbolic="YES" id="644"/>
+                    <constraint firstItem="648" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="657"/>
+                    <constraint firstAttribute="bottom" secondItem="648" secondAttribute="bottom" constant="9" id="661"/>
+                    <constraint firstAttribute="trailing" secondItem="648" secondAttribute="trailing" constant="20" symbolic="YES" id="662"/>
+                    <constraint firstItem="648" firstAttribute="top" secondItem="372" secondAttribute="top" constant="248" id="701"/>
+                    <constraint firstItem="648" firstAttribute="top" secondItem="604" secondAttribute="bottom" constant="8" symbolic="YES" id="702"/>
+                    <constraint firstItem="640" firstAttribute="leading" secondItem="725" secondAttribute="trailing" constant="8" symbolic="YES" id="732"/>
+                    <constraint firstItem="725" firstAttribute="top" secondItem="372" secondAttribute="top" constant="11" id="733"/>
+                    <constraint firstItem="725" firstAttribute="top" secondItem="640" secondAttribute="top" id="734"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="initialFirstResponder" destination="640" id="758"/>
+            </connections>
+        </window>
+        <customObject id="544" customClass="AppController">
+            <connections>
+                <outlet property="itemArrayController" destination="739" id="963"/>
+                <outlet property="itemType" destination="725" id="741"/>
+                <outlet property="itemsTable" destination="605" id="756"/>
+                <outlet property="mainWindow" destination="371" id="737"/>
+                <outlet property="startButton" destination="764" id="901"/>
+                <outlet property="startMenuItem" destination="1183" id="1187"/>
+                <outlet property="statusMenu" destination="801" id="809"/>
+                <outlet property="stopButton" destination="771" id="902"/>
+                <outlet property="stopMenuItem" destination="1158" id="1186"/>
+                <outlet property="timeLabel" destination="785" id="792"/>
+                <outlet property="timeLogArrayController" destination="829" id="964"/>
+                <outlet property="timeTable" destination="621" id="984"/>
+                <outlet property="uploadButton" destination="775" id="903"/>
+            </connections>
+        </customObject>
+        <menu title="AMainMenu" systemMenu="main" id="985">
+            <items>
+                <menuItem title="OnTime Timer" id="991"/>
+                <menuItem title="Edit" id="990">
+                    <menu key="submenu" title="Edit" id="1011">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="1024">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="1130"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="1018">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1019">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Cut" keyEquivalent="x" id="1022">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="1133"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="1020">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="1134"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="1021">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="1131"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="1025">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="1132"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="797" customClass="AppDelegate">
+            <connections>
+                <outlet property="statusMenu" destination="801" id="806"/>
+                <outlet property="window" destination="371" id="799"/>
+            </connections>
+        </customObject>
+        <arrayController mode="entity" entityName="Items" fetchPredicateFormat="" automaticallyPreparesContent="YES" id="739" userLabel="Items">
+            <connections>
+                <binding destination="544" name="managedObjectContext" keyPath="managedObjectContext" id="755"/>
+                <binding destination="1226" name="sortDescriptors" keyPath="values.sortDescriptorItems" id="1258">
+                    <dictionary key="options">
+                        <bool key="NSValidatesImmediately" value="YES"/>
+                        <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                    </dictionary>
+                </binding>
+            </connections>
+        </arrayController>
+        <arrayController mode="entity" entityName="TimeLog" automaticallyPreparesContent="YES" id="829" userLabel="TimeLog" customClass="TimeLogArrayContraller">
+            <connections>
+                <binding destination="739" name="contentSet" keyPath="selection.timeLog" id="924">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                        <bool key="NSValidatesImmediately" value="YES"/>
+                    </dictionary>
+                </binding>
+                <binding destination="544" name="managedObjectContext" keyPath="managedObjectContext" id="932"/>
+                <binding destination="1226" name="sortDescriptors" keyPath="values.sortDescriptorTimeLog" id="1257">
+                    <dictionary key="options">
+                        <bool key="NSValidatesImmediately" value="YES"/>
+                        <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                    </dictionary>
+                </binding>
+            </connections>
+        </arrayController>
+        <menu id="801" userLabel="Status Bar Menu">
+            <items>
+                <menuItem title="Show" id="803">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showWindow:" target="544" id="810"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Start" id="1183">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Start" id="1184"/>
+                    <connections>
+                        <binding destination="544" name="enabled" keyPath="self.startButton.enabled" id="1199"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Stop" id="1158">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="stopTimer:" target="544" id="1188"/>
+                        <binding destination="544" name="enabled" keyPath="self.stopButton.enabled" id="1196"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="805"/>
+                <menuItem title="Preferences" id="1147">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showPreferences:" target="544" id="1205"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Check for Updates" id="980">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="978" id="982"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="About" id="965">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontStandardAboutPanel:" target="-2" id="968"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="981"/>
+                <menuItem title="Logout &amp; Quit" id="976">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="signOut:" target="544" id="977"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" keyEquivalent="q" id="804">
+                    <connections>
+                        <action selector="quit:" target="544" id="811"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu id="847" userLabel="Item Menu">
+            <items>
+                <menuItem title="Remove" keyEquivalent="" id="850">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="removeItem:" target="544" id="983"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu id="905" userLabel="Time Menu">
+            <items>
+                <menuItem title="Remove" keyEquivalent="" id="906">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="remove:" target="829" id="908"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="978" customClass="SUUpdater"/>
+        <arrayController mode="entity" entityName="TaskType" automaticallyPreparesContent="YES" id="1207" userLabel="TaskType">
+            <connections>
+                <binding destination="544" name="managedObjectContext" keyPath="managedObjectContext" id="1210"/>
+                <binding destination="1226" name="sortDescriptors" keyPath="values.sortDescriptorTaskType" id="1249">
+                    <dictionary key="options">
+                        <bool key="NSValidatesImmediately" value="YES"/>
+                        <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                    </dictionary>
+                </binding>
+            </connections>
+        </arrayController>
+        <userDefaultsController representsSharedInstance="YES" id="1226"/>
+    </objects>
+</document>
