@@ -55,8 +55,8 @@
                                                                                      authorizationURL:[NSURL URLWithString:urlString]
                                                                                      keychainItemName:kKeychainName
                                                                                        resourceBundle:nil];
-    
-        
+    //added to give window access to cookie
+    windowController.shouldPersistUser = true;
 
     NSString *html = @"<html><body><div align=center>Loading sign-in page...</div></body></html>";
     [windowController setInitialHTMLString:html];
