@@ -175,7 +175,10 @@
     if ([appts count] > 0) {
         NSAlert *alert = [NSAlert alertWithMessageText:@"Error" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Item has already exists below."];
         [alert runModal];
-    } else {
+    } else if ([searchId isEqualToString:@""]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Error" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please Enter a Value to Search"];
+        [alert runModal];
+            } else {
         [OnTimeClasses searchForItemByType:itemType andId:searchId andTable:[self itemsTable]];
     }
     

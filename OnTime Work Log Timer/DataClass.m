@@ -10,8 +10,8 @@
 
 @implementation DataClass
 
-NSString * const kClientId = @"clientIDPlaceholder";
-NSString * const kClientSecret = @"clientSecretPlaceholder";
+NSString * const kClientId = @"586a301a-d401-492d-b8b9-45a8309d811a";
+NSString * const kClientSecret = @"69745eea-9e4c-4faa-8faa-28fc02fafd0f";
 NSString * const kServiceName = @"Axosoft TimeTracker";
 NSString * const kKeychainName = @"Axosoft Stopwatch";
 
