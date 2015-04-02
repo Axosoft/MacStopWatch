@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		200895001700B552001CD8A2 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 200894FD1700B46E001CD8A2 /* Sparkle.framework */; };
+		200895001700B552001CD8A2 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 200894FD1700B46E001CD8A2 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		200895021700B70B001CD8A2 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 200895011700B70B001CD8A2 /* dsa_pub.pem */; };
 		20AF52B217823398000313E6 /* ItemIdValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF52B117823398000313E6 /* ItemIdValueTransformer.m */; };
 		20CFBFDA1705FE5700B16693 /* OnTimeTimerIcons.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 20CFBFD91705FE5700B16693 /* OnTimeTimerIcons.iconset */; };
@@ -666,7 +666,7 @@
 		20EF962916E65A2E00F68F45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Axosoft, LLC";
 				TargetAttributes = {
 					20CFC02B17188CF600B16693 = {
@@ -952,7 +952,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "OnTime Work Log Timer/OnTime Work Log Timer.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -967,7 +967,8 @@
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Axosoft Stopwatch";
-				PROVISIONING_PROFILE = "6916E2E4-2D67-409D-A29C-1E8F6AAE9ACB";
+				PROVISIONING_PROFILE = "16ddb1fb-a950-4039-8e45-5d8e64a4ca64";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -977,7 +978,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "OnTime Work Log Timer/OnTime Work Log Timer.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -992,7 +993,8 @@
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Axosoft Stopwatch";
-				PROVISIONING_PROFILE = "6916E2E4-2D67-409D-A29C-1E8F6AAE9ACB";
+				PROVISIONING_PROFILE = "16ddb1fb-a950-4039-8e45-5d8e64a4ca64";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
