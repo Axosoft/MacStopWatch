@@ -96,6 +96,7 @@
         
         // Date_Time
         NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm'Z'"];
         NSString *stringFormat = [dateFormatter stringFromDate:[timeLog date]];
         [postTimeLog setDate_time:stringFormat];
