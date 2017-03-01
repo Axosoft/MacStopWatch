@@ -193,7 +193,7 @@
 
 - (void)populateDropDownTypes
 {
-    NSArray *initialValues = @[@{@"defects": @"Defects"}, @{@"features": @"Features"}, @{@"incidents": @"Incidents"}, @{@"tasks": @"Custom"}];
+    NSArray *initialValues = @[@{@"defects": @"Defects"}, @{@"features": @"Work Items"}, @{@"incidents": @"Tickets"}, @{@"tasks": @"Custom"}];
     NSFetchRequest *fetchRequest = [[[CoreDataHelper sharedInstance] managedObjectModel] fetchRequestFromTemplateWithName:@"fetchAllTaskTypes" substitutionVariables:nil];
     
     NSError *error;

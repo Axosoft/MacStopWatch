@@ -1,4 +1,4 @@
-[Download link](https://axosoft.com/downloads/releases/StopWatch%20Mac%2014.3/Axosoft%20Stopwatch.zip)
+[Download link](https://axosoft.com/downloads/releases/StopWatch%20Mac%2017/Axosoft%20Stopwatch.zip)
 ------------
 Requirements: 
 
